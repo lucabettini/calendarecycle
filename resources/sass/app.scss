@@ -1,0 +1,51 @@
+@import "~bootstrap/scss/functions";
+@import "variables";
+@import "~bootstrap/scss/bootstrap";
+@import url("https://fonts.googleapis.com/css2?family=Carter+One&family=Noto+Sans+SC:wght@300;500&display=swap");
+
+// FONTS
+
+.font-noto {
+    font-family: "Noto Sans SC", sans-serif;
+    font-weight: 300;
+}
+
+.font-noto-md {
+    font-family: "Noto Sans SC", sans-serif;
+    font-weight: 500;
+}
+
+.font-carter {
+    font-family: "Carter One", cursive;
+}
+
+body {
+    font-family: "Noto Sans SC", sans-serif;
+    color: #494947; // black
+    background-color: #fcf6c5; // light-yellow
+}
+
+.bin-hover :hover {
+    background-color: #f9ec8b;
+    cursor: pointer;
+}
+
+.logout :hover {
+    background-color: #fcf6c5 !important;
+}
+
+.main-icon {
+    font-size: 50vw;
+
+    @media screen and (min-width: 768px) {
+        font-size: 30vw;
+    }
+
+    @media screen and (min-width: 992px) {
+        font-size: 25vw;
+    }
+
+    @media screen and (min-width: 1400px) {
+        font-size: 20vw;
+    }
+}
