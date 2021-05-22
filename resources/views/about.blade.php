@@ -8,13 +8,13 @@
             </h1>
             <hr class="mb-5">
             <p>
-                This website was first created in May 2021 by <a href="" class="text-black">Luca Bettini</a> as a personal project for the PHP module of <a href="" class="text-black">start2impact</a>.
+                This website was first created in May 2021 by <a href="https://lucabettini.github.io/" class="text-black">Luca Bettini</a> as a personal project for the PHP module of <a href="https://talent.start2impact.it/profile/luca-bettini" class="text-black">start2impact</a>.
             </p>
             <p>
                 Built with Laravel, mySql, Blade & Bootstrap. No bins were harmed while making this.
             </p>
             <p>
-                Additional infos and the entire codebase are available <a href="" class="text-black">here</a>.
+                Additional infos and the entire codebase are available <a href="https://github.com/lucabettini/calendarecycle/tree/main" class="text-black">here</a>.
             </p>
         </div>
     </div>
