@@ -1,9 +1,9 @@
 @import "~bootstrap/scss/functions";
 @import "variables";
 @import "~bootstrap/scss/bootstrap";
-@import url("https://fonts.googleapis.com/css2?family=Carter+One&family=Noto+Sans+SC:wght@300;500&display=swap");
 
-// FONTS
+///// >>> FONTS <<< /////
+@import url("https://fonts.googleapis.com/css2?family=Carter+One&family=Noto+Sans+SC:wght@300;500&display=swap");
 
 .font-noto {
     font-family: "Noto Sans SC", sans-serif;
@@ -18,6 +18,9 @@
 .font-carter {
     font-family: "Carter One", cursive;
 }
+
+///// >>> OTHER CLASSES <<< /////
+// (mostly minor adjustments)  //
 
 body {
     font-family: "Noto Sans SC", sans-serif;

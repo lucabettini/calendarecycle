@@ -20,18 +20,15 @@ class BinController extends Controller
         return view('forms.addBin');
     }
 
-    // @get     /bins/edit/id
-    public function edit(Bin $bin)
-    {
-        return view('forms.editBin', [
-            'bin' => $bin
-        ]);
-    }
 
     // @post    /bins
     public function store(BinRequest $request)
     {
-        // See BinRequest for validation rules
+        // VALIDATION 
+        // At this point, the request was already validated. See BinRequest
+        // for validation rules
+
+        // ADD BIN TO DB
         $request->user()->bins()->create([
             'name' => $request->name,
             'color' => $request->color,
@@ -40,19 +37,32 @@ class BinController extends Controller
             'end_at' => $request->end_at,
         ]);
 
+        // REDIRECT TO /home
         return redirect()->route('home');
     }
 
-    // @put     /bins/edit/id
+    // @get     /bins/edit/{id}
+    public function edit(Bin $bin)
+    {
+        return view('forms.editBin', [
+            'bin' => $bin
+        ]);
+    }
+
+    // @put     /bins/edit/{id}
     public function update(BinRequest $request, Bin $bin)
     {
+        // VALIDATION 
+        // At this point, the request was already validated. See BinRequest
+        // for validation rules
 
-        // See BinRequest for validation rules
+        // AUTHENTICATION
         // See BinPolicy for authentication
         if ($request->user()->cannot('change', $bin)) {
             abort(403);
         }
 
+        // UPDATE BIN IN DB
         $bin->update([
             'name' => $request->name,
             'color' => $request->color,
@@ -61,20 +71,24 @@ class BinController extends Controller
             'end_at' => $request->end_at,
         ]);
 
+        // REDIRECT TO /home
         return redirect()->route('home');
     }
 
-    // @delete     /bins/edit/id
+    // @delete     /bins/edit/{id}
     public function destroy(Request $request, Bin $bin)
     {
 
+        // AUTHENTICATION
         // See BinPolicy for authentication
         if ($request->user()->cannot('change', $bin)) {
             abort(403);
         }
 
+        // DELETE BIN IN DB
         $bin->delete();
 
+        // REDIRECT TO /home
         return redirect()->route('home');
     }
 }

@@ -17,6 +17,7 @@ class EnforceHttps
      */
     public function handle(Request $request, Closure $next)
     {
+        // Global middleware: redirects all htpp requests to htpps
         if (!$request->secure() && App::environment() === 'production') {
             return redirect()->secure($request->getRequestUri(), 301);
         }

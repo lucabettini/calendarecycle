@@ -16,15 +16,18 @@ class ResetPasswordController extends Controller
         $this->middleware(['guest']);
     }
 
+    // @get      /resetPassword/{token}
     public function index($token)
     {
         return view('auth.reset-password', ['token' => $token]);
     }
 
+    // @get      /resetPassword
     public function store(Request $request)
     {
 
         // VALIDATION 
+        // If this fails, throws an exception and redirects back
         $request->validate([
             'token' => 'required',
             'email' => 'required|email',
@@ -32,7 +35,8 @@ class ResetPasswordController extends Controller
         ]);
 
         // PASSWORD RESET
-        // If the entered data are valid the closure is invoked 
+        // If the entered data are valid the closure is invoked, saving
+        // the new password in the DB
         $status = Password::reset(
             $request->only('email', 'password', 'password_confirmation', 'token'),
             function ($user, $password) use ($request) {
@@ -46,6 +50,8 @@ class ResetPasswordController extends Controller
             }
         );
 
+        // REDIRECT 
+        // Either to /login with confirmation message or back with error message
         return $status == Password::PASSWORD_RESET
             ? redirect()->route('login')->with('status', 'password_changed')
             : back()->with('status', 'failed');

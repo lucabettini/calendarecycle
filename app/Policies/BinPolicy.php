@@ -11,7 +11,7 @@ class BinPolicy
     use HandlesAuthorization;
 
     /**
-     * Determine whether the user can view, change or delete the model.
+     * Determine whether the user can edit or delete the model.
      *
      * @param  \App\Models\User  $user
      * @param  \App\Models\Bin  $bin

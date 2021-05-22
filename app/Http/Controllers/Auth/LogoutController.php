@@ -13,9 +13,15 @@ class LogoutController extends Controller
         $this->middleware(['auth']);
     }
 
-    public function store()
+    // @post      /logout
+    public function store(Request $request)
     {
+        // LOGOUT USER AND REDIRECT 
         Auth::logout();
+        $request->session()->invalidate();
+        // regenerate CSRF token
+        $request->session()->regenerateToken();
+        //redirect to /
         return redirect('/');
     }
 }

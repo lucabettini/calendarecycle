@@ -15,6 +15,7 @@ class CreateBinsTable extends Migration
     {
         Schema::create('bins', function (Blueprint $table) {
             $table->id();
+            // Delete all bins if the user account is deleted
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->string('name');
             $table->string('color');

@@ -32,11 +32,7 @@
                 <a href="{{ route('week') }}" class="btn btn-outline-cyan btn-sm text-black
                 @if (Route::current()->getName() === 'week') btn-cyan text-black @endif">All week</a>
             </div>                            
-        </div>
-
-        
-
-        
+        </div>     
 
         {{-- BINS --}}
 

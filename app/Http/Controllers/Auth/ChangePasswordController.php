@@ -16,23 +16,28 @@ class ChangePasswordController extends Controller
         $this->middleware(['auth']);
     }
 
+    // @get      /changePassword
     public function index()
     {
         return view('auth.change-password');
     }
 
+    // @post    /changePassword
     public function store(Request $request, User $user)
     {
-        // Get current user instance
+        // GET CURRENT USER INSTANCE 
         $currentUser = $user->find(auth()->user()->id);
 
+        // OLD PASSWORD VALIDATION
+        // If this fails, redirects back with an error message
         if (!Hash::check($request->old_password, auth()->user()->password)) {
             return back()->withErrors([
                 'old_password' => 'The old password is not valid'
             ]);
         };
 
-        // VALIDATION
+        // NEW PASSWORD VALIDATION
+        // If this fails, throws an exception and redirects back
         $this->validate($request, [
             'password' => [
                 'required',
@@ -47,6 +52,7 @@ class ChangePasswordController extends Controller
         ]);
 
         // SIGN-IN USER AND REDIRECT
+        // Redirects back, confirmation message is shown 
         return back()->with('status', 'success');
     }
 }

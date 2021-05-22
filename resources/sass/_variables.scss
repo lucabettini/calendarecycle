@@ -1,6 +1,4 @@
-// Variables
-
-// scss-docs-start gray-color-variables
+///// >>> BOOTSTRAP COLOR SYSTEM <<< /////
 $white: #fff !default;
 $gray-100: #f8f9fa !default;
 $gray-200: #e9ecef !default;
@@ -12,10 +10,7 @@ $gray-700: #495057 !default;
 $gray-800: #343a40 !default;
 $gray-900: #212529 !default;
 $black: #000 !default;
-// scss-docs-end gray-color-variables
 
-// fusv-disable
-// scss-docs-start gray-colors-map
 $grays: (
     "100": $gray-100,
     "200": $gray-200,
@@ -27,10 +22,7 @@ $grays: (
     "800": $gray-800,
     "900": $gray-900,
 ) !default;
-// scss-docs-end gray-colors-map
-// fusv-enable
 
-// scss-docs-start color-variables
 $blue: #0d6efd !default;
 $indigo: #6610f2 !default;
 $purple: #6f42c1 !default;
@@ -41,9 +33,7 @@ $yellow: #ffc107 !default;
 $green: #198754 !default;
 $teal: #20c997 !default;
 $cyan: #0dcaf0 !default;
-// scss-docs-end color-variables
 
-// scss-docs-start colors-map
 $colors: (
     "blue": $blue,
     "indigo": $indigo,
@@ -59,7 +49,26 @@ $colors: (
     "gray": $gray-600,
     "gray-dark": $gray-800,
 ) !default;
-// scss-docs-end colors-map
+
+$primary: $cyan;
+$secondary: $gray-600 !default;
+$success: $green !default;
+$info: $cyan !default;
+$warning: $yellow !default;
+$danger: $red;
+$light: $gray-100 !default;
+$dark: $gray-900 !default;
+
+$theme-colors: (
+    "primary": $primary,
+    "secondary": $secondary,
+    "success": $success,
+    "info": $info,
+    "warning": $warning,
+    "danger": $danger,
+    "light": $light,
+    "dark": $dark,
+) !default;
 
 ///// >>> CUSTOM COLORS <<< /////
 $custom-colors: (
@@ -76,32 +85,9 @@ $custom-colors: (
     "gray": #a39ba8,
 );
 
-// scss-docs-start theme-color-variables
-$primary: $cyan;
-$secondary: $gray-600 !default;
-$success: $green !default;
-$info: $cyan !default;
-$warning: $yellow !default;
-$danger: $red;
-$light: $gray-100 !default;
-$dark: $gray-900 !default;
-// scss-docs-end theme-color-variables
-
-// scss-docs-start theme-colors-map
-$theme-colors: (
-    "primary": $primary,
-    "secondary": $secondary,
-    "success": $success,
-    "info": $info,
-    "warning": $warning,
-    "danger": $danger,
-    "light": $light,
-    "dark": $dark,
-) !default;
-// scss-docs-end theme-colors-map
-
 $theme-colors: map-merge($theme-colors, $custom-colors);
 
+// Navbar dropdown's colors
 $dropdown-bg: #44ccff;
 $dropdown-link-hover-bg: #fcf6c5;
 $dropdown-link-active-bg: #fcf6c5;

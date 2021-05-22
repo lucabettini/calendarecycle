@@ -12,8 +12,10 @@ class HomeController extends Controller
         $this->middleware(['auth']);
     }
 
+    // @get     /home
     public function home()
     {
+        // Pass only today's bins to the view
         return view('home', [
             'bins' => auth()->user()->bins
                 ->where('day', Carbon::now(auth()->user()->timezone)->dayOfWeek)
@@ -21,8 +23,10 @@ class HomeController extends Controller
         ]);
     }
 
+    // @get     /tomorrow
     public function tomorrow()
     {
+        // Pass only tomorrow's bins to the view
         return view('home', [
             'bins' => auth()->user()->bins
                 ->where('day', Carbon::tomorrow(auth()->user()->timezone)->dayOfWeek)
@@ -30,8 +34,10 @@ class HomeController extends Controller
         ]);
     }
 
+    // @get     /week
     public function week()
     {
+        // Pass all bins to the view, sorted by day
         return view('home', [
             'bins' => auth()->user()->bins
                 ->sortBy([

@@ -1,34 +1,34 @@
 <?php
 
-use App\Http\Controllers\Auth\ChangePasswordController;
+
+use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\LogoutController;
-use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\Auth\EditAccountController;
+use App\Http\Controllers\Auth\ChangePasswordController;
 use App\Http\Controllers\Auth\ForgotPasswordController;
 use App\Http\Controllers\Auth\ResetPasswordController;
 
-use App\Http\Controllers\BinController;
-use App\Http\Controllers\EditAccountController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\BinController;
 
 use Illuminate\Support\Facades\Route;
 
 
-// SINGLE PAGES 
-Route::get('/', function () {
-    return view('index');
-});
+///////////////////////////
+//////  VIEW ROUTES  //////
+/////////////////////////// 
+Route::view('/', 'index');
 
-Route::get('/profile', function () {
-    return view('profile');
-})->middleware('auth')->name('profile');
+Route::view('/about', 'about')->name('about');
 
-Route::get('/about', function () {
-    return view('about');
-})->name('about');
+Route::view('/profile', 'profile')->middleware('auth')->name('profile');
 
 
-// AUTHENTICATION 
+
+///////////////////////////
+///// AUTHENTICATION  /////
+///////////////////////////
 Route::get('/register', [RegisterController::class, 'index'])->name('register');
 Route::post('/register', [RegisterController::class, 'store']);
 
@@ -51,7 +51,10 @@ Route::get('/reset-password/{token}', [ResetPasswordController::class, 'index'])
 Route::post('/reset-password', [ResetPasswordController::class, 'store'])->name('password.update');;
 
 
-// BINS
+
+///////////////////////////
+////////// BINS  //////////
+///////////////////////////
 Route::get('/home', [HomeController::class, 'home'])->name('home');
 Route::get('/tomorrow', [HomeController::class, 'tomorrow'])->name('tomorrow');
 Route::get('/week', [HomeController::class, 'week'])->name('week');

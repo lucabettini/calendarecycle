@@ -13,11 +13,13 @@ class LoginController extends Controller
         $this->middleware(['guest']);
     }
 
+    // @get      /login
     public function index()
     {
         return view('auth.login');
     }
 
+    // @post      /register
     public function store(Request $request)
     {
         // VALIDATION 
@@ -28,11 +30,14 @@ class LoginController extends Controller
         ]);
 
         // SIGN-IN USER
+        // If this fails, redirects back with an error message
         if (!Auth::attempt($request->only('email', 'password'), $request->remember)) {
             return back()->with('status', 'failed');
         };
 
         // REDIRECT 
+        // Redirects back to the protected route if the request was intercepted 
+        // by the auth middleware, otherwise defaults to /home
         return redirect()->intended('home');
     }
 }

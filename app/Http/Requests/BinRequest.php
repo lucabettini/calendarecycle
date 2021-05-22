@@ -6,11 +6,13 @@ use Illuminate\Foundation\Http\FormRequest;
 
 class BinRequest extends FormRequest
 {
+
     public function authorize()
     {
         return true;
     }
 
+    // Validation rules 
     public function rules()
     {
         return [
@@ -22,6 +24,7 @@ class BinRequest extends FormRequest
         ];
     }
 
+    // Validation error messages
     public function messages()
     {
         $msg = 'This field is required';
