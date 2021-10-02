@@ -12,8 +12,6 @@ The requirements were:
 
 I decided to use Laravel (for the first time), providing a basic authentication system and some Blade templates with a [customized version ](https://github.com/lucabettini/calendarecycle/blob/main/resources/sass/_variables.scss)of Bootstrap 5 to create a simple frontend. 
 
-NB: the main branch includes only the basic folders on which I've added files or made some modifications. A [separate branch](https://github.com/lucabettini/calendarecycle/tree/heroku-prod), named heroku-prod, is the one actually used in production and includes more Laravel scaffolding and the Procfile. 
-
 <br>
 
 ## USERS AND AUTHENTICATION
