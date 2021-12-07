@@ -64,7 +64,7 @@
       
    
     <footer class="bg-cyan fixed-bottom text-center text-black fw-light shadow" >
-      Made by <a href="" class="text-black">Luca Bettini</a> | Read more <a href="{{ route('about') }}" class="text-black">here</a>.
+      Made by <a href="https://lucabettini.com" target="_blank" rel="noopener noreferrer" class="text-black">Luca Bettini</a> | Read more <a href="{{ route('about') }}" class="text-black">here</a>.
     </footer>
 
      <script src="{{ mix('js/app.js') }}"></script>
