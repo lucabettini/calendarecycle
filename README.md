@@ -2,7 +2,7 @@
 
 # [CALENDARECYCLE](https://calendarecycle.lucabettini.com)
 
-<i>Completed and deployed on Heroku on December 15, 2020 - new deploy on DigitalOcean droplet on October 3, 2021</i>
+<i>Completed and deployed on Heroku on May 23, 2021 - new deploy on DigitalOcean droplet on October 2, 2021</i>
 
 This website was created as a personal project while following the [Start2Impact](https://www.start2impact.it/) development course.
 The requirements were:
