@@ -4,7 +4,8 @@
 
 <i>Completed and deployed on Heroku on May 23, 2021 - new deploy on DigitalOcean droplet on October 2, 2021</i>
 
-This website was created as a personal project while following the [Start2Impact](https://www.start2impact.it/) development course.
+This website was created as a personal project while following the [Start2Impact](https://www.start2impact.it/) PHP & mySQL course.
+
 The requirements were:
 
 -   A webapp built to track garbage collection days
